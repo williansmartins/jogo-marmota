@@ -1,21 +1,28 @@
-var quantidade = 15;
-var velocidade = 2000;
+var quantidade = 6;
+var velocidade = 4000;
 
 $( document ).ready(function() {
 	popularCasinhas();
 	esconderMarmotas();
 	animarMarmotas();
-	prepararAcaoDasMarmotas();
+	prepararAcaoDasMarmotas(); 
 });
+
+function playCavalo(){
+	var x = document.getElementById("myAudio"); 
+	x.play(); 
+}
 
 function prepararAcaoDasMarmotas(){
 	$(".imagem1").click(function(){
 		console.info($(this));
 		var id = $(this).parent().attr('id');
-		console.info(id);
+		if(id!=null){
+			$(".tabuleiro .casinha .imagem").hide();
+	  		$(".tabuleiro .casinha#"+id+" .imagem2").show();
+			playCavalo();	
+		}
 
-		$(".tabuleiro .casinha .imagem").hide();
-  		$(".tabuleiro .casinha#"+id+" .imagem2").show();
 	});
 }
 
@@ -26,8 +33,8 @@ function animarMarmotas(){
 function popularCasinhas(){
 	for (var i = 1; i <=quantidade; i++) {
 		var casinha = '<div class="casinha" id="'+i+'">' +
-			'<img class="imagem imagem1" src="images/marmota1.jpg" width="100" /> ' +
-			'<img class="imagem imagem2" src="images/marmota2.jpg" width="100" />' +
+			'<img class="imagem imagem1" src="images/marmota1.jpg" width="100%" /> ' +
+			'<img class="imagem imagem2" src="images/marmota2.jpg" width="100%" />' +
 		'</div>';
 
 		$(".tabuleiro").append(casinha);
