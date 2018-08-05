@@ -1,5 +1,5 @@
 var quantidade = 6;
-var velocidade = 4000;
+var velocidade = 2000;
 
 $( document ).ready(function() {
 	popularCasinhas();
@@ -33,8 +33,8 @@ function animarMarmotas(){
 function popularCasinhas(){
 	for (var i = 1; i <=quantidade; i++) {
 		var casinha = '<div class="casinha" id="'+i+'">' +
-			'<img class="imagem imagem1" src="images/marmota1.jpg" width="100%" /> ' +
-			'<img class="imagem imagem2" src="images/marmota2.jpg" width="100%" />' +
+			'<img class="imagem imagem1" src="images/marmota-somente.png" width="100%" /> ' +
+			'<img class="imagem imagem2" src="images/marmota-zonza.png" width="100%" />' +
 		'</div>';
 
 		$(".tabuleiro").append(casinha);
